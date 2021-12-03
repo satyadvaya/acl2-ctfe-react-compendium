@@ -12,7 +12,7 @@ export default function Filter({
         <option key="all" value="all">
           All
         </option>
-        {pokedexTypes.map(({ type }) => (
+        {pokedexTypes.map((type) => (
           <option key={type} value={type}>
             {type}
           </option>

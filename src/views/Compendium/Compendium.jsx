@@ -7,6 +7,7 @@ function Compendium() {
   const [loading, setLoading] = useState(true);
   const [pokedex, setPokedex] = useState([]);
   const [pokedexTypes, setPokedexTypes] = useState({});
+  const [selectedType, setSelectedType] = useState("");
 
   useEffect(() => {
     async function getPokedex() {
@@ -31,7 +32,11 @@ function Compendium() {
   }
   return (
     <>
-      <Filter pokedexTypes={pokedexTypes} />
+      <Filter
+        pokedexTypes={pokedexTypes}
+        selectedType={selectedType}
+        handleFilterChange={setSelectedType}
+      />
       <PokemonList pokedex={pokedex} />
     </>
   );
